@@ -1,40 +1,44 @@
-\# 一箭又一箭（Arrow Escape）
+# Arrow Escape
 
 
 
-\## 游戏简介
+A click-based arrow puzzle game.
 
 
 
-点击式箭头解谜小游戏。棋盘上分布若干带方向的箭头（上、下、左、右）。
-
-点击箭头时：
+## Game Rules
 
 
 
-\- 若其前进方向到棋盘边界之间没有其他箭头 → 箭头飞出并消除；
+The board contains arrows pointing Up, Down, Left, or Right.
 
-\- 若前方有箭头阻挡 → 不能消除，失误次数 +1；
-
-\- 每关 3 次失误，用尽即失败；
-
-\- 清空全部箭头即通关，进入下一关。
+When you click an arrow:
 
 
 
-\## 开发环境
+- If there are no other arrows between it and the board edge in its direction, it flies out and is removed.
+
+- If another arrow blocks its path, it cannot be removed and you lose one mistake.
+
+- Each level allows 3 mistakes. Running out means failure.
+
+- Clear all arrows to pass the level and advance to the next one.
 
 
 
-\- Python 3.10
-
-\- pygame 2.5.0
-
-\- pytest（仅测试用）
+## Environment
 
 
 
-\## 安装与运行
+- Python 3.10
+
+- pygame 2.5.0
+
+- pytest (for testing only)
+
+
+
+## Install and Run
 
 
 
@@ -48,111 +52,87 @@ python main.py
 
 
 
-\## 操作说明
+## Controls
 
 
 
-| 操作 | 效果 |
+| Action | Effect |
 
-|------|------|
+|--------|--------|
 
-| 鼠标左键点击箭头 | 无阻挡则飞出；有阻挡则失误 +1 |
+| Left click on arrow | Flies out if unblocked; mistake +1 if blocked |
 
-| 点击左上角“重新开始” | 当前关卡恢复初始状态 |
+| Click Restart (top-left) | Reset current level |
 
-| 开始界面点击“开始游戏” | 进入第 1 关 |
+| Click Start on start screen | Enter level 1 |
 
-| 结果界面点击任意位置 | 返回开始界面 |
-
-
-
-\## 关卡说明
+| Click anywhere on result screen | Back to start screen |
 
 
 
-共 3 个关卡，均已人工试玩验证可通关：
+## Levels
 
 
 
-\- 关卡 1：4×4，4 个箭头，入门
-
-\- 关卡 2：4×4，4 个箭头，简单
-
-\- 关卡 3：5×5，9 个箭头，含“先清障”设计
+3 levels total, all verified playable:
 
 
 
-\## 游戏截图
+- Level 1: 4x4, 4 arrows, easy
+
+- Level 2: 4x4, 4 arrows, simple
+
+- Level 3: 5x5, 9 arrows, with clear-first design
 
 
 
-\### 开始界面
-
-!\[开始界面](screenshots/start.png)
+## Screenshots
 
 
 
-\### 游戏过程
+### Start screen
 
-!\[游戏过程](screenshots/process.gif)
-
-
-
-\### 结束界面
-
-!\[结束界面](screenshots/end.png)
+![Start screen](screenshots/start.png)
 
 
 
-\## 运行测试
+### Gameplay
+
+![Gameplay](screenshots/process.gif)
+
+
+
+### End screen
+
+![End screen](screenshots/end.png)
+
+
+
+## Run Tests
 
 
 
 ```bash
 
-python -m pytest test\_game.py -v
+python -m pytest test_game.py -v
 
 ```
 
 
 
-\## 项目结构
+## AIGC Usage
 
 
 
-```
+DeepSeek was used to help with the code framework, path detection and animation.
 
-arrow-game/
-
-├── main.py            # 主程序：界面、状态机、动画
-
-├── game.py            # 核心逻辑：路径检测、失误、胜负
-
-├── levels.py          # 关卡数据
-
-├── test\_game.py       # pytest 自动化测试
-
-├── README.md
-
-└── screenshots/       # 截图与演示动图
-
-```
+All AI-generated code has been debugged, modified and verified by the author.
 
 
 
-\## AIGC 使用说明
+## Assets
 
 
 
-开发过程中使用 DeepSeek 辅助完成代码框架、路径检测与动画实现，
-
-所有 AI 生成代码均经本人调试、修改与验证。详见博客。
-
-
-
-\## 素材来源
-
-
-
-本项目所有图形均由 pygame 绘制，无第三方素材。
+All graphics are drawn by pygame. No third-party assets.
 
