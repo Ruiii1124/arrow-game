@@ -1,3 +1,4 @@
+# main.py - 一箭又一箭主程序
 import sys
 import math
 import pygame
